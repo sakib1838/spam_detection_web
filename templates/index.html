@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Spam Detection</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Spam Detection</h1>
+        <form method="post" action="/">
+            <label for="message">Enter Message:</label>
+            <textarea id="message" name="message" rows="4" cols="50"></textarea>
+            <button type="submit">Predict</button>
+        </form>
+        {% if result %}
+        <div class="result">
+            <p>Result: {{ result }}</p>
+            <p>Message: {{ message }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
